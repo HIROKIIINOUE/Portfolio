@@ -1,4 +1,6 @@
 import Bio from './Bio'
+import ScrollIndicator from './ScrollIndicator'
+
 const HeroSection = () => {
   return (
     <section
@@ -7,8 +9,9 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,_#030712_0%,_#04110b_100%)]" />
 
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-8">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-6">
         <Bio />
+        <ScrollIndicator />
       </div>
     </section>
   )
