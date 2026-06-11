@@ -1,5 +1,45 @@
-.fade-up-enter {
-  animation: fade-up-rise 3000ms cubic-bezier(0.22, 1, 0.36, 1) both;
+.reveal-on-scroll,
+.card-sheen {
+  --card-enter-duration: 2000ms;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.reveal-on-scroll[data-visible="true"] {
+  animation: fade-up-rise var(--card-enter-duration)
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.card-sheen {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.card-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    120deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.02) 44%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(110, 231, 183, 0.16) 54%,
+    transparent 62%
+  );
+  transform: translateX(-140%) rotate(10deg);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.card-sheen[data-visible="true"]::after {
+  animation: card-sheen-sweep 2000ms cubic-bezier(0.22, 1, 0.36, 1)
+    var(--card-enter-duration) 1 both;
 }
 
 @keyframes fade-up-rise {
@@ -11,5 +51,34 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes card-sheen-sweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%) rotate(10deg);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(40%) rotate(10deg);
+  }
+}
+
+@keyframes scroll-indicator-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
   }
 }
