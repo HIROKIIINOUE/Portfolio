@@ -3,7 +3,7 @@ import { FaDownload, FaGithub, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 
-const Bio = () => {
+const HeroCard = () => {
   const locale = 'en'
   const { ref, isVisible } = useRevealOnScroll<HTMLDivElement>({
     threshold: 0.1,
@@ -77,4 +77,4 @@ const Bio = () => {
   )
 }
 
-export default Bio
+export default HeroCard
