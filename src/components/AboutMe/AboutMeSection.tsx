@@ -1,7 +1,7 @@
 import AboutMeCard from './AboutMeCard'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 
-const AboutMe = () => {
+const AboutMeSection = () => {
   const { ref, isVisible } = useRevealOnScroll<HTMLDivElement>({
     threshold: 0,
     rootMargin: '0px 0px -20% 0px',
@@ -26,4 +26,4 @@ const AboutMe = () => {
   )
 }
 
-export default AboutMe
+export default AboutMeSection
