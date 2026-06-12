@@ -50,7 +50,7 @@ const SkillsCard = () => {
     <div
       ref={ref}
       data-visible={isVisible}
-      className="reveal-on-scroll card-sheen mx-auto w-full max-w-3xl rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.12),transparent_26%),linear-gradient(145deg,rgba(2,6,23,0.94)_0%,rgba(15,23,42,0.96)_55%,rgba(6,78,59,0.38)_100%)] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.26)] ring-1 ring-white/6 backdrop-blur-xl"
+      className="reveal-on-scroll card-sheen mx-auto w-full max-w-3xl rounded-[2rem] border-2 border-emerald-300/30 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.12),transparent_26%),linear-gradient(145deg,rgba(2,6,23,0.94)_0%,rgba(15,23,42,0.96)_55%,rgba(6,78,59,0.38)_100%)] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.26)] ring-1 ring-white/6 backdrop-blur-xl"
     >
       <ul className="flex flex-wrap gap-2.5">
         {skills.map((skill, index) => {
