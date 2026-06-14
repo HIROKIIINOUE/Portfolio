@@ -61,9 +61,9 @@ export const projectSectionCopy = {
   },
   actions: {
     live: {
-      en: "Live Demo",
-      ja: "実物リンク",
-      fr: "Demo",
+      en: "Link",
+      ja: "リンク",
+      fr: "Link",
     },
     github: {
       en: "GitHub",
