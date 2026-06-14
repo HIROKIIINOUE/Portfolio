@@ -145,6 +145,33 @@ export const projectCatalog = {
         "Trip Calculator recupere des taux de change recents via une API externe afin de permettre aux voyageurs de gerer leurs depenses a l etranger dans leur devise d origine. J ai pris en charge seul tout le projet, de la definition des besoins et de la conception de la base de donnees jusqu a l implementation et la mise en ligne. Cote backend, j ai utilise JWT, bcrypt, zxcvbn et zod pour securiser la gestion des donnees. Cote frontend, j ai vise un design simple, accessible et une experience utilisateur intuitive.",
     },
   },
+  dummy: {
+    common: {
+      category: "personal",
+      image: "",
+      liveUrl: "https://example.com/localink",
+      gitHubUrl: "https://github.com/example/localink",
+      skills: [...locaLinkSkills],
+    },
+    en: {
+      platform: "Web App",
+      title: "Portfolio",
+      description:
+        "LocaLink was a team project aimed at making local transactions feel more discoverable and trustworthy. I focused on the buyer-side browsing experience, card layouts, and filter interactions to reduce friction in exploring listings. I also collaborated on API integration and helped align the UI with the team product direction.",
+    },
+    ja: {
+      platform: "Webアプリ",
+      title: "LocaLink",
+      description:
+        "LocaLink は、地域内の取引をより見つけやすく、安心して行えるようにすることを目指したチーム開発です。私は購入者向けの一覧体験、カードレイアウト、絞り込み操作の設計を担当し、掲載情報を探しやすくすることに注力しました。加えて API 連携にも関わり、チーム全体のプロダクト方針に沿って UI を整えました。",
+    },
+    fr: {
+      platform: "Application Web",
+      title: "LocaLink",
+      description:
+        "LocaLink etait un projet d equipe visant a rendre les transactions locales plus visibles et plus fiables. Je me suis concentre sur l experience de navigation cote acheteur, les cartes d annonces et les filtres pour reduire les frictions. J ai aussi participe a l integration API et a l alignement de l UI avec la direction produit de l equipe.",
+    },
+  },
   localink: {
     common: {
       category: "team",
