@@ -9,7 +9,7 @@ const ProjectsSection = () => {
   const [isOwnProjects, setIsOwnProjects] = useState(true)
 
   return (
-    <section className="px-4 pb-20 sm:px-6 lg:px-8">
+    <section id="projects" className="scroll-mt-28 px-4 pb-20 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-6xl">
         <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:items-center">
           <h2 className="text-xs font-semibold tracking-[0.38em] text-emerald-200/78 uppercase sm:text-sm">

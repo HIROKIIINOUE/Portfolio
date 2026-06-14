@@ -3,12 +3,28 @@ import { FaEnvelope, FaMoon } from 'react-icons/fa'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { IoLanguage } from 'react-icons/io5'
 
-const navItems = ['Top', 'Skill', 'About Me', 'Project'] as const
+const navItems = [
+  { label: 'Top', href: '#landing' },
+  { label: 'Skill', href: '#skills' },
+  { label: 'About Me', href: '#about' },
+  { label: 'Project', href: '#projects' },
+] as const
 const languageOptions = ['English', 'Japanese', 'French'] as const
 type DropdownState = 'close' | 'navigation' | 'language'
 
 const Header = () => {
   const [dropdownState, setDropdownState] = useState<DropdownState>('close')
+
+  const handleNavigate = (href: (typeof navItems)[number]['href']) => {
+    const target = document.querySelector(href)
+
+    if (!(target instanceof HTMLElement)) {
+      return
+    }
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setDropdownState('close')
+  }
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
@@ -40,11 +56,12 @@ const Header = () => {
               <nav className="hidden min-w-0 flex-1 items-center gap-1 overflow-x-auto sm:flex">
                 {navItems.map((item) => (
                   <button
-                    key={item}
+                    key={item.label}
                     type="button"
+                    onClick={() => handleNavigate(item.href)}
                     className="shrink-0 cursor-pointer rounded-full px-4 py-2 text-sm font-medium tracking-[0.08em] text-slate-200 transition hover:-translate-y-0.5 hover:bg-white/[0.06] hover:text-emerald-200"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 ))}
               </nav>
@@ -91,11 +108,12 @@ const Header = () => {
             <nav className="grid gap-2 rounded-[1.75rem] border border-white/10 bg-[linear-gradient(135deg,rgba(2,6,23,0.96)_0%,rgba(6,78,59,0.82)_50%,rgba(2,6,23,0.98)_100%)] p-3 ring-1 ring-emerald-300/10 backdrop-blur-xl">
               {navItems.map((item) => (
                 <button
-                  key={item}
+                  key={item.label}
                   type="button"
+                  onClick={() => handleNavigate(item.href)}
                   className="cursor-pointer rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 text-left text-sm font-medium tracking-[0.08em] text-slate-100 transition hover:border-emerald-300/35 hover:bg-emerald-400/[0.08] hover:text-emerald-200"
                 >
-                  {item}
+                  {item.label}
                 </button>
               ))}
             </nav>

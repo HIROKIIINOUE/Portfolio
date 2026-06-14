@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section
       id="landing"
-      className="relative overflow-hidden px-4 pb-14 pt-32 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36"
+      className="relative scroll-mt-28 overflow-hidden px-4 pb-14 pt-32 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36"
     >
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,_#030712_0%,_#04110b_100%)]" />
 
