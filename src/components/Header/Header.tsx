@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { FaEnvelope, FaMoon, FaSun } from 'react-icons/fa'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
-import { IoLanguage } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../App'
 import { headerLocales } from '../../locales/header'
+import { MdLanguage } from 'react-icons/md'
 
 type DropdownState = 'close' | 'navigation' | 'language'
 
@@ -99,7 +99,7 @@ const Header = ({ theme, onToggleTheme }: Props) => {
                   }
                   className="theme-header-icon-button flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/35 hover:bg-emerald-400/[0.08] hover:text-emerald-200"
                 >
-                  <IoLanguage className="text-lg" />
+                  <MdLanguage className="text-lg" />
                 </button>
 
 
