@@ -74,13 +74,13 @@ const Header = ({ theme, onToggleTheme }: Props) => {
             </div>
 
             <div className="flex shrink-0 items-center justify-end gap-2">
-              <button
-                type="button"
+              <a
+                href="mailto:tyynh.hiroki@gmail.com?subject=From%20portfolio%20site"
                 aria-label="Email"
                 className="theme-header-icon-button flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/35 hover:bg-emerald-400/[0.08] hover:text-emerald-200"
               >
                 <FaEnvelope className="text-base" />
-              </button>
+              </a>
               <div className="relative">
                 <button
                   type="button"
