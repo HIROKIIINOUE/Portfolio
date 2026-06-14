@@ -18,9 +18,15 @@ const ProjectList = (props: Props) => {
       ? project.common.category === 'personal'
       : project.common.category === 'team'
   )
+  const gridClassName =
+    filteredProjects.length === 1
+      ? 'grid gap-5 max-w-2xl mx-auto'
+      : filteredProjects.length === 2
+        ? 'grid gap-5 md:grid-cols-2 max-w-5xl mx-auto'
+        : 'grid gap-5 md:grid-cols-2 xl:grid-cols-3'
 
   return (
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    <div className={gridClassName}>
       {filteredProjects.map((project, index) => (
         <ProjectCard key={project.id} project={project} index={index} />
       ))}
