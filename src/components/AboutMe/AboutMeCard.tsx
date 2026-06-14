@@ -1,3 +1,5 @@
+import useRevealOnScroll from '../../hooks/useRevealOnScroll'
+
 const historyItems = [
   {
     period: '2025 - Now',
@@ -25,15 +27,18 @@ const historyItems = [
   },
 ] as const
 
-type AboutMeCardProps = {
-  isVisible: boolean
-}
+const AboutMeCard = () => {
+  const { ref, isVisible } = useRevealOnScroll<HTMLElement>({
+    threshold: 0,
+    rootMargin: '0px 0px -20% 0px',
+    minScrollY: 10,
+  })
 
-const AboutMeCard = ({ isVisible }: AboutMeCardProps) => {
   return (
     <article
+      ref={ref}
       data-visible={isVisible}
-      className="card-sheen rounded-4xl border-2 border-emerald-300/30 bg-[radial-gradient(circle_at_top_left,rgba(52,211,153,0.14),transparent_30%),linear-gradient(145deg,rgba(15,23,42,0.96)_0%,rgba(6,78,59,0.52)_42%,rgba(15,23,42,0.98)_100%)] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.26)] ring-1 ring-white/6 backdrop-blur-xl sm:p-8"
+      className="reveal-on-scroll card-sheen rounded-4xl border-2 border-emerald-300/30 bg-[radial-gradient(circle_at_top_left,rgba(52,211,153,0.14),transparent_30%),linear-gradient(145deg,rgba(15,23,42,0.96)_0%,rgba(6,78,59,0.52)_42%,rgba(15,23,42,0.98)_100%)] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.26)] ring-1 ring-white/6 backdrop-blur-xl sm:p-8"
     >
       <div className="flex flex-col gap-8">
         <ul className="relative grid gap-4 before:absolute before:top-0 before:bottom-2 before:left-[1.05rem] before:w-0.5 before:bg-[linear-gradient(180deg,rgba(52,211,153,0.45)_0%,rgba(52,211,153,0.08)_100%)] sm:gap-5">
