@@ -25,23 +25,10 @@ type Props = {
   index: number
 }
 
-const screenshotThemes: Record<string, string> = {
-  studyhub:
-    'bg-[radial-gradient(circle_at_top_left,rgba(110,231,183,0.26),transparent_36%),linear-gradient(145deg,rgba(6,78,59,0.92)_0%,rgba(15,23,42,0.98)_72%,rgba(2,6,23,0.98)_100%)]',
-  devtrack:
-    'bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.22),transparent_34%),linear-gradient(145deg,rgba(15,23,42,0.98)_0%,rgba(6,78,59,0.6)_48%,rgba(2,6,23,0.98)_100%)]',
-  tripcanvas:
-    'bg-[radial-gradient(circle_at_bottom_left,rgba(251,191,36,0.22),transparent_34%),linear-gradient(145deg,rgba(6,78,59,0.9)_0%,rgba(15,23,42,0.98)_68%,rgba(2,6,23,0.98)_100%)]',
-  localink:
-    'bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.24),transparent_32%),linear-gradient(145deg,rgba(2,6,23,0.96)_0%,rgba(15,23,42,0.98)_52%,rgba(6,78,59,0.6)_100%)]',
-  clientflow:
-    'bg-[radial-gradient(circle_at_top_right,rgba(192,132,252,0.2),transparent_32%),linear-gradient(145deg,rgba(15,23,42,0.98)_0%,rgba(6,78,59,0.52)_42%,rgba(2,6,23,0.98)_100%)]',
-  campusloop:
-    'bg-[radial-gradient(circle_at_center,rgba(110,231,183,0.22),transparent_30%),linear-gradient(145deg,rgba(6,78,59,0.88)_0%,rgba(15,23,42,0.98)_62%,rgba(2,6,23,0.98)_100%)]',
-}
+const screenshotTheme =
+  'bg-[radial-gradient(circle_at_top_left,rgba(110,231,183,0.26),transparent_36%),linear-gradient(145deg,rgba(6,78,59,0.92)_0%,rgba(15,23,42,0.98)_72%,rgba(2,6,23,0.98)_100%)]'
 
 const ProjectCard = ({ project, index }: Props) => {
-  const screenshotTheme = screenshotThemes[project.id] ?? screenshotThemes.studyhub
   const { t } = useTranslation('project')
   const { ref, isVisible } = useRevealOnScroll<HTMLElement>({
     threshold: 0.08,
