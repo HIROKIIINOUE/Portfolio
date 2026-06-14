@@ -47,35 +47,35 @@ const ProjectCard = ({ project, index }: Props) => {
       ref={ref}
       data-visible={isVisible}
       style={{ transitionDelay: `${index * 90}ms` }}
-      className="reveal-on-scroll card-sheen flex h-full flex-col overflow-hidden rounded-[1.75rem] border-2 border-emerald-300/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)] shadow-[0_20px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-emerald-100"
+      className="theme-card reveal-on-scroll card-sheen flex h-full flex-col overflow-hidden rounded-[1.75rem] border-2 border-emerald-300/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)] shadow-[0_20px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-emerald-100"
     >
-      <div className={`relative min-h-52 overflow-hidden border-b border-white/10 p-5 ${screenshotTheme}`}>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(2,6,23,0.18)_100%)]" />
+      <div className={`theme-project-shot relative min-h-52 overflow-hidden border-b border-white/10 p-5 ${screenshotTheme}`}>
+        <div className="theme-project-shot-overlay absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(2,6,23,0.18)_100%)]" />
         <div className="relative flex h-full flex-col justify-between">
 
           <div className="grid gap-3">
             <div className="grid grid-cols-[1.2fr_0.8fr] gap-3">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
+              <div className="theme-project-panel rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
                 <div className="h-3 w-20 rounded-full bg-emerald-200/28" />
-                <div className="mt-3 h-20 rounded-xl border border-white/8 bg-white/[0.05]" />
+                <div className="theme-project-block mt-3 h-20 rounded-xl border border-white/8 bg-white/[0.05]" />
               </div>
               <div className="grid gap-3">
-                <div className="rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
-                  <div className="h-3 w-12 rounded-full bg-white/20" />
-                  <div className="mt-3 h-7 rounded-lg bg-emerald-300/18" />
+                <div className="theme-project-panel rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
+                  <div className="theme-project-line h-3 w-12 rounded-full bg-white/20" />
+                  <div className="theme-project-accent mt-3 h-7 rounded-lg bg-emerald-300/18" />
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
-                  <div className="h-3 w-16 rounded-full bg-white/20" />
-                  <div className="mt-3 h-7 rounded-lg bg-white/[0.08]" />
+                <div className="theme-project-panel rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
+                  <div className="theme-project-line h-3 w-16 rounded-full bg-white/20" />
+                  <div className="theme-project-block mt-3 h-7 rounded-lg bg-white/[0.08]" />
                 </div>
               </div>
             </div>
 
             <div>
-              <p className="text-md font-semibold text-emerald-200/82">
+              <p className="theme-kicker text-md font-semibold text-emerald-200/82">
                 {project.platform} ({project.common.category === 'personal' ? 'Personal' : 'Team'})
               </p>
-              <p className="mt-2 text-2xl tracking-[0.2em] font-semibold text-white">
+              <p className="theme-heading mt-2 text-2xl tracking-[0.2em] font-semibold text-white">
                 {project.title}
               </p>
             </div>
@@ -85,7 +85,7 @@ const ProjectCard = ({ project, index }: Props) => {
 
       <div className="flex flex-1 flex-col p-5">
         <div>
-          <p className="mt-3 text-sm leading-7 text-slate-200">
+          <p className="theme-body mt-3 text-sm leading-7 text-slate-200">
             {project.description}
           </p>
         </div>
@@ -101,7 +101,7 @@ const ProjectCard = ({ project, index }: Props) => {
             href={project.common.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-400/18 bg-[linear-gradient(135deg,rgba(6,95,70,0.88)_0%,rgba(5,150,105,0.84)_55%,rgba(4,120,87,0.9)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50 shadow-[0_14px_34px_rgba(4,120,87,0.18)] ring-1 ring-emerald-300/8 transition hover:-translate-y-0.5 hover:border-emerald-300/28 hover:brightness-110"
+            className="theme-primary-button inline-flex items-center justify-center gap-2 rounded-full border border-emerald-400/18 bg-[linear-gradient(135deg,rgba(6,95,70,0.88)_0%,rgba(5,150,105,0.84)_55%,rgba(4,120,87,0.9)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50 shadow-[0_14px_34px_rgba(4,120,87,0.18)] ring-1 ring-emerald-300/8 transition hover:-translate-y-0.5 hover:border-emerald-300/28 hover:brightness-110"
           >
             <FaArrowUpRightFromSquare className="text-xs" />
             {project.common.linkBadge}
@@ -110,7 +110,7 @@ const ProjectCard = ({ project, index }: Props) => {
             href={project.common.gitHubUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
+            className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
           >
             <FaGithub className="text-sm" />
             {project.common.githubBadge}
