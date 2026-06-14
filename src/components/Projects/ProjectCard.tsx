@@ -6,22 +6,10 @@ import { FaArrowUpRightFromSquare, FaGithub } from 'react-icons/fa6'
 import { useTranslation } from 'react-i18next'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 import SkillBadge from '../SkillBadge/SkillBadge'
-import type { SkillLabel } from '../SkillBadge/skillCatalog'
+import type { Project } from '../../locales/project'
 
 type Props = {
-  project: {
-    id: string
-    common: {
-      category: 'personal' | 'team'
-      image: string
-      liveUrl: string
-      gitHubUrl: string
-      skills: SkillLabel[]
-    }
-    platform: string
-    title: string
-    description: string
-  }
+  project: Project
   index: number
 }
 
@@ -30,6 +18,7 @@ const screenshotTheme =
 
 const ProjectCard = ({ project, index }: Props) => {
   const { t } = useTranslation('project')
+  const hasImage = project.common.image.length > 0
   const { ref, isVisible } = useRevealOnScroll<HTMLElement>({
     threshold: 0.08,
     rootMargin: '0px 0px -12% 0px',
@@ -43,43 +32,44 @@ const ProjectCard = ({ project, index }: Props) => {
       style={{ transitionDelay: `${index * 90}ms` }}
       className="theme-card reveal-on-scroll card-sheen flex h-full flex-col overflow-hidden rounded-[1.75rem] border-2 border-emerald-300/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)] shadow-[0_20px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-emerald-100"
     >
-      <div className={`theme-project-shot relative min-h-52 overflow-hidden border-b border-white/10 p-5 ${screenshotTheme}`}>
-        <div className="theme-project-shot-overlay absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(2,6,23,0.18)_100%)]" />
+      <div
+        className={`theme-project-shot relative min-h-52 overflow-hidden border-b border-white/10 ${hasImage ? 'bg-slate-950' : screenshotTheme}`}
+      >
+        {hasImage ? (
+          <img
+            src={project.common.image}
+            alt={project.title}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : null}
+        <div className="theme-project-shot-overlay absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.22)_40%,rgba(2,6,23,0.88)_100%)]" />
         <div className="relative flex h-full flex-col justify-between">
-
-          <div className="grid gap-3">
-            <div className="grid grid-cols-[1.2fr_0.8fr] gap-3">
-              <div className="theme-project-panel rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
-                <div className="h-3 w-20 rounded-full bg-emerald-200/28" />
-                <div className="theme-project-block mt-3 h-20 rounded-xl border border-white/8 bg-white/[0.05]" />
-              </div>
-              <div className="grid gap-3">
-                <div className="theme-project-panel rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
-                  <div className="theme-project-line h-3 w-12 rounded-full bg-white/20" />
-                  <div className="theme-project-accent mt-3 h-7 rounded-lg bg-emerald-300/18" />
-                </div>
-                <div className="theme-project-panel rounded-2xl border border-white/10 bg-slate-950/28 p-3 backdrop-blur-sm">
-                  <div className="theme-project-line h-3 w-16 rounded-full bg-white/20" />
-                  <div className="theme-project-block mt-3 h-7 rounded-lg bg-white/[0.08]" />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p className="theme-kicker text-md font-semibold text-emerald-200/82">
+          {!hasImage ? (
+            <div className="mt-auto px-5 pb-5 pt-24">
+              <p className="theme-kicker text-sm font-semibold text-emerald-200/82 drop-shadow-[0_2px_8px_rgba(2,6,23,0.8)]">
                 {project.platform} ({t(`section.category.${project.common.category}`)})
               </p>
-              <p className="theme-heading mt-2 text-2xl tracking-[0.2em] font-semibold text-white">
+              <p className="theme-heading mt-2 text-2xl font-semibold tracking-[0.18em] text-white drop-shadow-[0_4px_18px_rgba(2,6,23,0.92)]">
                 {project.title}
               </p>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-5">
+        {hasImage ? (
+          <div>
+            <p className="theme-kicker text-sm font-semibold text-emerald-200/82">
+              {project.platform} ({t(`section.category.${project.common.category}`)})
+            </p>
+            <p className="theme-heading mt-2 text-2xl font-semibold tracking-[0.18em] text-white">
+              {project.title}
+            </p>
+          </div>
+        ) : null}
         <div>
-          <p className="theme-body mt-3 text-sm leading-7 text-slate-200">
+          <p className={`theme-body text-sm leading-7 text-slate-200 ${hasImage ? 'mt-4' : 'mt-3'}`}>
             {project.description}
           </p>
         </div>
