@@ -19,6 +19,7 @@ import {
   SiTypescript,
   SiRevenuecat,
 } from "react-icons/si";
+import { MdLanguage } from "react-icons/md";
 
 export const skillLabels = [
   "TypeScript",
@@ -38,6 +39,7 @@ export const skillLabels = [
   "Sentry",
   "Tailwind CSS",
   "Revenue Cat",
+  "i18n",
   "Codex",
 ] as const;
 
@@ -61,6 +63,7 @@ const skillIconMap: Record<SkillLabel, IconType> = {
   Sentry: SiSentry,
   "Tailwind CSS": SiTailwindcss,
   "Revenue Cat": SiRevenuecat,
+  i18n: MdLanguage,
   Codex: FaCode,
 };
 
