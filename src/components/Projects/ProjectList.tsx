@@ -1,14 +1,33 @@
-import { getProjects } from '../../locales/project'
+import { useTranslation } from 'react-i18next'
+import type { SkillLabel } from '../SkillBadge/skillCatalog'
 import ProjectCard from './ProjectCard'
+
+type ProjectData = {
+  id: string
+  common: {
+    category: 'personal' | 'team'
+    image: string
+    liveUrl: string
+    gitHubUrl: string
+    skills: SkillLabel[]
+  }
+  platform: string
+  title: string
+  description: string
+}
 
 type Props = {
   isOwnProject: boolean
-  locale: 'en' | 'ja' | 'fr'
 }
 
 const ProjectList = (props: Props) => {
-  const { isOwnProject, locale } = props
-  const projects = getProjects(locale)
+  const { isOwnProject } = props
+  const { t } = useTranslation('project')
+  const catalog = t('catalog', { returnObjects: true }) as Record<string, Omit<ProjectData, 'id'>>
+  const projects = Object.entries(catalog).map(([id, project]) => ({
+    id,
+    ...project,
+  }))
 
   const filteredProjects = projects.filter((project) =>
     isOwnProject

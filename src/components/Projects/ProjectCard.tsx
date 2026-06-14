@@ -2,20 +2,26 @@
 // プロジェクトカードの編集と完成
 // 技術スタックはアイコンを共通コンポーネント化してスキルセクションと共用できないか
 
-
-
-
-
-
-
-
 import { FaArrowUpRightFromSquare, FaGithub } from 'react-icons/fa6'
-import type { Project as ProjectType } from '../../locales/types'
+import { useTranslation } from 'react-i18next'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 import SkillBadge from '../SkillBadge/SkillBadge'
+import type { SkillLabel } from '../SkillBadge/skillCatalog'
 
 type Props = {
-  project: ProjectType
+  project: {
+    id: string
+    common: {
+      category: 'personal' | 'team'
+      image: string
+      liveUrl: string
+      gitHubUrl: string
+      skills: SkillLabel[]
+    }
+    platform: string
+    title: string
+    description: string
+  }
   index: number
 }
 
@@ -36,6 +42,7 @@ const screenshotThemes: Record<string, string> = {
 
 const ProjectCard = ({ project, index }: Props) => {
   const screenshotTheme = screenshotThemes[project.id] ?? screenshotThemes.studyhub
+  const { t } = useTranslation('project')
   const { ref, isVisible } = useRevealOnScroll<HTMLElement>({
     threshold: 0.08,
     rootMargin: '0px 0px -12% 0px',
@@ -73,7 +80,7 @@ const ProjectCard = ({ project, index }: Props) => {
 
             <div>
               <p className="theme-kicker text-md font-semibold text-emerald-200/82">
-                {project.platform} ({project.common.category === 'personal' ? 'Personal' : 'Team'})
+                {project.platform} ({t(`section.category.${project.common.category}`)})
               </p>
               <p className="theme-heading mt-2 text-2xl tracking-[0.2em] font-semibold text-white">
                 {project.title}
@@ -104,7 +111,7 @@ const ProjectCard = ({ project, index }: Props) => {
             className="theme-primary-button inline-flex items-center justify-center gap-2 rounded-full border border-emerald-400/18 bg-[linear-gradient(135deg,rgba(6,95,70,0.88)_0%,rgba(5,150,105,0.84)_55%,rgba(4,120,87,0.9)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50 shadow-[0_14px_34px_rgba(4,120,87,0.18)] ring-1 ring-emerald-300/8 transition hover:-translate-y-0.5 hover:border-emerald-300/28 hover:brightness-110"
           >
             <FaArrowUpRightFromSquare className="text-xs" />
-            {project.common.linkBadge}
+            {t('section.actions.live')}
           </a>
           <a
             href={project.common.gitHubUrl}
@@ -113,7 +120,7 @@ const ProjectCard = ({ project, index }: Props) => {
             className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
           >
             <FaGithub className="text-sm" />
-            {project.common.githubBadge}
+            {t('section.actions.github')}
           </a>
         </div>
       </div>

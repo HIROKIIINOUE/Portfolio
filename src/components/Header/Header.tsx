@@ -2,15 +2,10 @@ import { useState } from 'react'
 import { FaEnvelope, FaMoon, FaSun } from 'react-icons/fa'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { IoLanguage } from 'react-icons/io5'
+import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../App'
+import { headerLocales } from '../../locales/header'
 
-const navItems = [
-  { label: 'Top', href: '#landing' },
-  { label: 'Skill', href: '#skills' },
-  { label: 'About Me', href: '#about' },
-  { label: 'Project', href: '#projects' },
-] as const
-const languageOptions = ['English', 'Japanese', 'French'] as const
 type DropdownState = 'close' | 'navigation' | 'language'
 
 type Props = {
@@ -20,6 +15,13 @@ type Props = {
 
 const Header = ({ theme, onToggleTheme }: Props) => {
   const [dropdownState, setDropdownState] = useState<DropdownState>('close')
+  const { t, i18n } = useTranslation('header')
+  const navItems = [
+    { label: t('nav.landing'), href: '#landing' },
+    { label: t('nav.skills'), href: '#skills' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.projects'), href: '#projects' },
+  ] as const
 
   const handleNavigate = (href: (typeof navItems)[number]['href']) => {
     const target = document.querySelector(href)
@@ -47,7 +49,11 @@ const Header = ({ theme, onToggleTheme }: Props) => {
             <div className="flex items-center justify-start gap-3 md:flex-1 md:justify-between">
               <button
                 type="button"
-                aria-label={dropdownState === 'navigation' ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-label={
+                  dropdownState === 'navigation'
+                    ? t('aria.closeNavigation')
+                    : t('aria.openNavigation')
+                }
                 aria-expanded={dropdownState === 'navigation'}
                 onClick={() =>
                   setDropdownState((current) =>
@@ -76,7 +82,7 @@ const Header = ({ theme, onToggleTheme }: Props) => {
             <div className="flex shrink-0 items-center justify-end gap-2">
               <a
                 href="mailto:tyynh.hiroki@gmail.com?subject=From%20portfolio%20site"
-                aria-label="Email"
+                aria-label={t('aria.email')}
                 className="theme-header-icon-button flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/35 hover:bg-emerald-400/[0.08] hover:text-emerald-200"
               >
                 <FaEnvelope className="text-base" />
@@ -84,7 +90,7 @@ const Header = ({ theme, onToggleTheme }: Props) => {
               <div className="relative">
                 <button
                   type="button"
-                  aria-label="Switch language"
+                  aria-label={t('aria.switchLanguage')}
                   aria-expanded={dropdownState === 'language'}
                   onClick={() =>
                     setDropdownState((current) =>
@@ -100,7 +106,7 @@ const Header = ({ theme, onToggleTheme }: Props) => {
               </div>
               <button
                 type="button"
-                aria-label="Toggle theme"
+                aria-label={t('aria.toggleTheme')}
                 onClick={onToggleTheme}
                 className="theme-header-icon-button flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/35 hover:bg-emerald-400/[0.08] hover:text-emerald-200"
               >
@@ -132,13 +138,17 @@ const Header = ({ theme, onToggleTheme }: Props) => {
         ) : dropdownState === 'language' ? (
           <div className="theme-dropdown-shell absolute top-[calc(100%+0.75rem)] right-0 z-10 w-44 rounded-[1.75rem] border border-emerald-300/25 shadow-[0_0_24px_rgba(16,185,129,0.22),0_12px_32px_rgba(2,12,18,0.4)]">
             <nav className="theme-dropdown-panel grid gap-2 rounded-[1.75rem] border border-white/10 bg-[linear-gradient(135deg,rgba(2,6,23,0.96)_0%,rgba(6,78,59,0.82)_50%,rgba(2,6,23,0.98)_100%)] p-3 ring-1 ring-emerald-300/10 backdrop-blur-xl">
-              {languageOptions.map((language) => (
+              {headerLocales.map((language) => (
                 <button
                   key={language}
                   type="button"
+                  onClick={() => {
+                    void i18n.changeLanguage(language)
+                    setDropdownState('close')
+                  }}
                   className="theme-dropdown-item cursor-pointer rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3 text-left text-sm font-medium tracking-[0.08em] text-slate-100 transition hover:border-emerald-300/35 hover:bg-emerald-400/[0.08] hover:text-emerald-200"
                 >
-                  {language}
+                  {t(`languageOptions.${language}`)}
                 </button>
               ))}
             </nav>

@@ -1,10 +1,10 @@
-import { uiCopy } from '../../locales/ui'
 import { FaDownload, FaGithub, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import { useTranslation } from 'react-i18next'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 
 const HeroCard = () => {
-  const locale = 'en'
+  const { t } = useTranslation('hero')
   const { ref, isVisible } = useRevealOnScroll<HTMLDivElement>({
     threshold: 0.1,
     rootMargin: '0px 0px -5% 0px',
@@ -18,11 +18,10 @@ const HeroCard = () => {
     >
       <div className="space-y-4">
         <h1 className="theme-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-          Hello, I&apos;m {uiCopy.hero.name}
+          {t('heading')}
         </h1>
         <p className="theme-body max-w-2xl text-lg text-slate-200 sm:text-xl">
-          Web Development Co-op student experienced in building and deploying production-ready full-stack
-          web and mobile applications
+          {t('description')}
         </p>
       </div>
 
@@ -32,7 +31,7 @@ const HeroCard = () => {
           className="theme-primary-button inline-flex items-center justify-center gap-2 rounded-full border border-emerald-400/18 bg-[linear-gradient(135deg,rgba(6,95,70,0.88)_0%,rgba(5,150,105,0.84)_55%,rgba(4,120,87,0.9)_100%)] px-5 py-3 text-sm font-semibold text-emerald-50 shadow-[0_14px_34px_rgba(4,120,87,0.18)] ring-1 ring-emerald-300/8 transition hover:-translate-y-0.5 hover:border-emerald-300/28 hover:brightness-110"
         >
           <FaLaptopCode className="text-sm" />
-          {uiCopy.hero.primaryCta[locale]}
+          {t('cta.primary')}
         </a>
         <a
           href="/resume/resume-20260610.pdf"
@@ -40,14 +39,14 @@ const HeroCard = () => {
           className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
         >
           <FaDownload className="text-xs" />
-          {uiCopy.hero.resumeCta[locale]}
+          {t('cta.resume')}
         </a>
         <a
           href="mailto:tyynh.hiroki@gmail.com?subject=From%20your%20portfolio"
           className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.06]"
         >
           <MdEmail className="text-base" />
-          {uiCopy.hero.secondaryCta[locale]}
+          {t('cta.secondary')}
         </a>
       </div>
 
