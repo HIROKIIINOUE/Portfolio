@@ -72,7 +72,6 @@ const buildProjectResources = (locale: Locale) => ({
     Object.entries(projectCatalog).map(([id, project]) => [
       id,
       {
-        common: project.common,
         ...project[locale],
       },
     ]),
