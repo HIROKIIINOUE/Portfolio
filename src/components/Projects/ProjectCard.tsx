@@ -39,7 +39,7 @@ const ProjectCard = ({ project, index }: Props) => {
           <img
             src={project.common.image}
             alt={project.title}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute rounded-t-3xl inset-0 h-full w-full border-4 border-emerald-300 object-cover"
           />
         ) : null}
         <div className="theme-project-shot-overlay absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.22)_40%,rgba(2,6,23,0.88)_100%)]" />
