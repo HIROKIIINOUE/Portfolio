@@ -1,6 +1,9 @@
 import type { SkillLabel } from "../components/SkillBadge/skillCatalog";
 import idealGapImage from "../assets/projects/ideal-gap.png";
 import tripCalculatorImage from "../assets/projects/trip-calculator.png";
+import portfolioImage from "../assets/projects/portfolio.png";
+import tsunagaruImage from "../assets/projects/tsunagaru.png";
+import quotationImage from "../assets/projects/quotation.png";
 import type { Locale } from "./index";
 
 // ここで各プロジェクトのスキルセットを管理
@@ -25,8 +28,31 @@ const tripCalculatorSkills: SkillLabel[] = [
   "Tailwind CSS",
   "i18n",
 ];
-const locaLinkSkills: SkillLabel[] = ["React", "Node.js", "Express", "MongoDB"];
-const clientFlowSkills: SkillLabel[] = ["React", "TypeScript", "Supabase"];
+const portfolioSkills: SkillLabel[] = [
+  "TypeScript",
+  "React",
+  "Tailwind CSS",
+  "i18n",
+];
+
+const tsunagaruSkills: SkillLabel[] = [
+  "TypeScript",
+  "Next.js",
+  "Node.js",
+  "Supabase",
+  "Docker",
+  "Tailwind CSS",
+  "Sentry",
+  "Codex",
+];
+const quotationSkills: SkillLabel[] = [
+  "TypeScript",
+  "Next.js",
+  "Tailwind CSS",
+  "PostgreSQL",
+  "Prisma",
+];
+
 const campusLoopSkills: SkillLabel[] = [
   "Next.js",
   "TypeScript",
@@ -145,88 +171,88 @@ export const projectCatalog = {
         "Trip Calculator recupere des taux de change recents via une API externe afin de permettre aux voyageurs de gerer leurs depenses a l etranger dans leur devise d origine. J ai pris en charge seul tout le projet, de la definition des besoins et de la conception de la base de donnees jusqu a l implementation et la mise en ligne. Cote backend, j ai utilise JWT, bcrypt, zxcvbn et zod pour securiser la gestion des donnees. Cote frontend, j ai vise un design simple, accessible et une experience utilisateur intuitive.",
     },
   },
-  dummy: {
+  portfolio: {
     common: {
       category: "personal",
-      image: "",
-      liveUrl: "https://example.com/localink",
-      gitHubUrl: "https://github.com/example/localink",
-      skills: [...locaLinkSkills],
+      image: portfolioImage,
+      liveUrl: "portfolio-five-pied-61.vercel.app/",
+      gitHubUrl: "https://github.com/HIROKIIINOUE/Portfolio",
+      skills: [...portfolioSkills],
     },
     en: {
-      platform: "Web App",
+      platform: "Web Site",
       title: "Portfolio",
       description:
-        "LocaLink was a team project aimed at making local transactions feel more discoverable and trustworthy. I focused on the buyer-side browsing experience, card layouts, and filter interactions to reduce friction in exploring listings. I also collaborated on API integration and helped align the UI with the team product direction.",
+        "This is the website you are viewing right now. It is my portfolio, including an introduction to my background. I aimed for a simple, easy-to-read, and modern design. Night mode is the default, but viewers can switch to light mode based on their preference. It also supports multiple languages, including English, Japanese, and French, implemented with i18n. Thank you for visiting my portfolio and taking the time to look through it!",
     },
     ja: {
-      platform: "Webアプリ",
-      title: "LocaLink",
+      platform: "Webサイト",
+      title: "ポートフォリオ",
       description:
-        "LocaLink は、地域内の取引をより見つけやすく、安心して行えるようにすることを目指したチーム開発です。私は購入者向けの一覧体験、カードレイアウト、絞り込み操作の設計を担当し、掲載情報を探しやすくすることに注力しました。加えて API 連携にも関わり、チーム全体のプロダクト方針に沿って UI を整えました。",
+        "現在ご覧になってる本サイトです。私の自己紹介を含めたポートフォリオになります。シンプルで見やすく、かつモダンなデザインを意識しました。ナイトモードをデフォルトとしていますがユーザの好みでライトモードへの変更も可能です。また、i18nを使用し英語、日本語、フランス語と多言語に対応しております。このポートフォリオまで辿り着き、ご覧になったくださりありがとうございます！",
     },
     fr: {
-      platform: "Application Web",
-      title: "LocaLink",
+      platform: "Site Web",
+      title: "Portfolio",
       description:
-        "LocaLink etait un projet d equipe visant a rendre les transactions locales plus visibles et plus fiables. Je me suis concentre sur l experience de navigation cote acheteur, les cartes d annonces et les filtres pour reduire les frictions. J ai aussi participe a l integration API et a l alignement de l UI avec la direction produit de l equipe.",
+        "Il s agit du site web que vous consultez en ce moment. C est mon portfolio, avec une presentation de mon parcours. J ai cherche a creer un design simple, moderne et facile a consulter. Le mode nuit est active par defaut, mais les visiteurs peuvent passer au mode clair selon leurs preferences. Le site prend egalement en charge plusieurs langues, dont l anglais, le japonais et le francais, grace a i18n. Merci d avoir visite mon portfolio et d avoir pris le temps de le parcourir !",
     },
   },
-  localink: {
+  tsunagaruLink: {
     common: {
       category: "team",
-      image: "",
-      liveUrl: "https://example.com/localink",
-      gitHubUrl: "https://github.com/example/localink",
-      skills: [...locaLinkSkills],
+      image: tsunagaruImage,
+      liveUrl: "",
+      gitHubUrl: "",
+      skills: [...tsunagaruSkills],
     },
     en: {
       platform: "Web App",
-      title: "LocaLink",
+      title: "Tsunagaru Link Project",
       description:
-        "LocaLink was a team project aimed at making local transactions feel more discoverable and trustworthy. I focused on the buyer-side browsing experience, card layouts, and filter interactions to reduce friction in exploring listings. I also collaborated on API integration and helped align the UI with the team product direction.",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
     ja: {
       platform: "Webアプリ",
-      title: "LocaLink",
+      title: "Tsunagaru Link Project",
       description:
-        "LocaLink は、地域内の取引をより見つけやすく、安心して行えるようにすることを目指したチーム開発です。私は購入者向けの一覧体験、カードレイアウト、絞り込み操作の設計を担当し、掲載情報を探しやすくすることに注力しました。加えて API 連携にも関わり、チーム全体のプロダクト方針に沿って UI を整えました。",
+        "Slack、LinkedInと接続可能な営業アプリケーションの開発に参加しました。主にUI修正、Sentry導入、Honey Potを導入したスパムメッセージ防止、一部リファクタリングなどを担当しました。初となる本格的なグループプロジェクトに参入し、リアルなワークフローに触れ、実際のプロジェクトの難しさを経験しました。",
     },
     fr: {
       platform: "Application Web",
-      title: "LocaLink",
+      title: "Tsunagaru Link Project",
       description:
-        "LocaLink etait un projet d equipe visant a rendre les transactions locales plus visibles et plus fiables. Je me suis concentre sur l experience de navigation cote acheteur, les cartes d annonces et les filtres pour reduire les frictions. J ai aussi participe a l integration API et a l alignement de l UI avec la direction produit de l equipe.",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
   },
-  clientflow: {
+  quotation: {
     common: {
       category: "team",
-      image: "",
-      liveUrl: "https://example.com/clientflow",
-      gitHubUrl: "https://github.com/example/clientflow",
-      skills: [...clientFlowSkills],
+      image: quotationImage,
+      liveUrl: "",
+      gitHubUrl: "",
+      skills: [...quotationSkills],
     },
     en: {
-      platform: "Web App",
-      title: "ClientFlow",
+      platform: "Web Site",
+      title: "Quotation Site",
       description:
-        "ClientFlow was developed to give a small freelance team better visibility into leads, active clients, and delivery status. I worked on the dashboard experience, progress indicators, and data presentation so the team could understand project status at a glance. My role covered frontend implementation, component structuring, and coordination around shared requirements.",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
     ja: {
-      platform: "Webアプリ",
-      title: "ClientFlow",
+      platform: "Webサイト",
+      title: "某企業の見積もり作成サイト",
       description:
-        "ClientFlow は、小規模なフリーランスチームがリード、進行中案件、納品状況を把握しやすくするために開発したツールです。私はダッシュボード体験、進捗表示、データ可視化を担当し、ひと目で状況が分かる画面作りに取り組みました。役割としては、フロントエンド実装、コンポーネント設計、要件のすり合わせを担いました。",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
     fr: {
-      platform: "Application Web",
-      title: "ClientFlow",
+      platform: "Site Web",
+      title: "LATER",
       description:
-        "ClientFlow a ete developpe pour offrir a une petite equipe freelance une meilleure visibilite sur les prospects, les clients actifs et l avancement des livraisons. J ai travaille sur l experience du tableau de bord, les indicateurs de progression et la presentation des donnees afin que l etat des projets soit lisible d un coup d oeil. Mon role couvrait l implementation frontend, la structuration des composants et la coordination des besoins partages.",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
   },
-  campusloop: {
+  finalPJCICCC: {
     common: {
       category: "team",
       image: "",
@@ -235,22 +261,22 @@ export const projectCatalog = {
       skills: [...campusLoopSkills],
     },
     en: {
-      platform: "Web App",
-      title: "CampusLoop",
+      platform: "finalPJCICCC",
+      title: "finalPJCICCC",
       description:
-        "CampusLoop was built as a group project to simplify event discovery and coordination on campus. I focused on event cards, filtering flows, and the information hierarchy that helps students understand what is happening quickly. I also contributed to shared component patterns and frontend implementation details across the team.",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
     ja: {
-      platform: "Webアプリ",
-      title: "CampusLoop",
+      platform: "finalPJCICCC",
+      title: "finalPJCICCC",
       description:
-        "CampusLoop は、学内イベントの発見と運営をよりスムーズにするためのチームプロジェクトです。私はイベントカード、絞り込みフロー、情報の優先順位設計を担当し、学生が必要な情報を素早く把握できることを重視しました。共通コンポーネント設計やフロントエンド実装にも貢献しています。",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
     fr: {
-      platform: "Application Web",
-      title: "CampusLoop",
+      platform: "finalPJCICCC",
+      title: "finalPJCICCC",
       description:
-        "CampusLoop a ete cree comme projet de groupe pour simplifier la decouverte et la coordination des evenements sur le campus. Je me suis concentre sur les cartes d evenements, les parcours de filtrage et la hierarchie d information permettant aux etudiants de comprendre rapidement ce qui se passe. J ai aussi contribue aux patterns de composants partages et aux details d implementation frontend.",
+        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
     },
   },
 } as const;

@@ -30,7 +30,7 @@ export const aboutMeEntries = [
       fr: "Australie",
     },
     summary: {
-      en: "Saved money for college in Canada while studying code independently. A senior engineer friend was helping me as a mentor, and he introduced me his friend's projects in which I learned a real project workflow.",
+      en: "Saved money for college in Canada while learning programming independently. A senior engineer friend mentored me and involved me in his projects, where I learned real-world project workflows.",
       ja: "カナダのカレッジ進学に向けて資金を貯めながら、独学でコーディングを学びました。シニアエンジニアの友人にメンターになってもらい、彼からの紹介で実際のプロジェクトにも参加しました。",
       fr: "J'ai economise pour entrer au college au Canada tout en apprenant a coder en autonomie. Un ami ingenieur senior m'a aussi permis d'apprendre au contact d'un vrai projet et d un workflow plus concret.",
     },
