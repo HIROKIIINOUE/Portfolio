@@ -30,7 +30,7 @@ const ProjectCard = ({ project, index }: Props) => {
       ref={ref}
       data-visible={isVisible}
       style={{ transitionDelay: `${index * 90}ms` }}
-      className="theme-card reveal-on-scroll card-sheen flex h-full flex-col overflow-hidden rounded-[1.75rem] border-2 border-emerald-300/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)] shadow-[0_20px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-emerald-100"
+      className="theme-card reveal-on-scroll card-sheen flex h-full flex-col overflow-hidden rounded-[1.75rem] border-2 border-emerald-300/30 bg-[radial-gradient(circle_at_top_left,rgba(52,211,153,0.14),transparent_30%),linear-gradient(145deg,rgba(15,23,42,0.96)_0%,rgba(6,78,59,0.52)_42%,rgba(15,23,42,0.98)_100%)] shadow-[0_28px_90px_rgba(0,0,0,0.26)] ring-1 ring-white/6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-emerald-100"
     >
       <div
         className={`theme-project-shot relative min-h-52 overflow-hidden border-b border-white/10 ${hasImage ? 'bg-slate-950' : screenshotTheme}`}

@@ -26,6 +26,11 @@ body {
   background: linear-gradient(180deg, #020617 0%, #04110b 100%);
 }
 
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -60,14 +65,51 @@ a {
   color: #0f172a;
 }
 
+[data-theme="light"] .theme-vanta-shell {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.86),
+      transparent 26%
+    ),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 46%, #e2e8f0 100%);
+}
+
+[data-theme="light"] .theme-vanta-overlay {
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(190, 242, 100, 0.16),
+      transparent 24%
+    ),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.3), rgba(248, 250, 252, 0.6));
+}
+
 [data-theme="light"] .theme-page-gradient {
   background:
     radial-gradient(
       circle at top left,
-      rgba(255, 255, 255, 0.78),
+      rgba(255, 255, 255, 0.6),
       transparent 30%
     ),
-    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    linear-gradient(180deg, rgba(248, 250, 252, 0.48) 0%, rgba(238, 242, 247, 0.16) 100%);
+}
+
+.theme-vanta-shell {
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top, rgba(6, 78, 59, 0.2), transparent 28%),
+    linear-gradient(180deg, #020617 0%, #04110b 100%);
+}
+
+.theme-vanta-overlay {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(16, 185, 129, 0.1),
+      transparent 24%
+    ),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.16), rgba(2, 6, 23, 0.42));
 }
 
 [data-theme="light"] .theme-card {

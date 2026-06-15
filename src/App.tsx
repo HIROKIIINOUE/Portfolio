@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import ProjectsSection from './components/Projects/ProjectsSection'
 import SkillsSection from './components/SkillsSection/SkillsSection'
+import VantaBackground from './components/VantaBackground/VantaBackground'
 
 export type Theme = 'dark' | 'light'
 
@@ -22,21 +23,24 @@ function App() {
   }, [theme])
 
   return (
-    <main className="app-shell min-h-screen bg-slate-950 text-slate-100">
-      <Header
-        theme={theme}
-        onToggleTheme={() =>
-          setTheme((currentTheme) =>
-            currentTheme === 'dark' ? 'light' : 'dark',
-          )
-        }
-      />
-      <HeroSection />
-      <SkillsSection />
-      <AboutMeSection />
-      <ProjectsSection />
-      <Footer />
-    </main>
+    <>
+      <VantaBackground theme={theme} />
+      <main className="app-shell relative z-10 min-h-screen text-slate-100">
+        <Header
+          theme={theme}
+          onToggleTheme={() =>
+            setTheme((currentTheme) =>
+              currentTheme === 'dark' ? 'light' : 'dark',
+            )
+          }
+        />
+        <HeroSection />
+        <SkillsSection />
+        <AboutMeSection />
+        <ProjectsSection />
+        <Footer />
+      </main>
+    </>
   )
 }
 
