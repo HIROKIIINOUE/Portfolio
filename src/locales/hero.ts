@@ -7,7 +7,7 @@ export const heroCopy = {
   description: {
     en: "Web Development Co-op student experienced in building and deploying production-ready full-stack web and mobile applications.",
     ja: "現在カナダでCoop留学をしています。Mobileアプリ、Webアプリを個人で開発、リリースし現在運用しています。 是非以下から確認してみてください。",
-    fr: "Etudiant en developpement web en coop avec de l experience dans la conception, le developpement et le deploiement d applications web et mobiles full-stack pretes pour la production.",
+    fr: "Étudiant en développement web en coop avec de l'expérience dans la conception, le développement et le déploiement d'applications web et mobiles full-stack prêtes pour la production.",
   },
   cta: {
     primary: {
@@ -18,7 +18,7 @@ export const heroCopy = {
     resume: {
       en: "Download Resume",
       ja: "履歴書をダウンロード",
-      fr: "Telecharger le CV",
+      fr: "Télécharger le CV",
     },
     secondary: {
       en: "Contact Me",

@@ -82,7 +82,7 @@ export const projectSectionCopy = {
     team: {
       en: "Team",
       ja: "チーム開発",
-      fr: "Equipe",
+      fr: "Équipe",
     },
   },
   actions: {
@@ -101,7 +101,7 @@ export const projectSectionCopy = {
     group: {
       en: "Project category",
       ja: "プロジェクトカテゴリ",
-      fr: "Categorie de projet",
+      fr: "Catégorie de projet",
     },
     personal: {
       en: "Show personal projects",
@@ -141,7 +141,7 @@ export const projectCatalog = {
       platform: "Application Mobile",
       title: "Ideal Gap",
       description:
-        "Ideal Gap aide les utilisateurs a transformer leurs efforts en habitudes pour se rapprocher de la personne qu ils veulent devenir, tout en rendant leur progression plus visible. J ai gere seul l ensemble du projet, de la definition des besoins et de la conception de la base de donnees jusqu a l implementation et la mise en ligne. L application est developpee avec React Native pour iOS et Android. La version iOS est deja publiee et la version Android approche de sa sortie.",
+        "Ideal Gap aide les utilisateurs à transformer leurs efforts en habitudes pour se rapprocher de la personne qu'ils veulent devenir, tout en rendant leur progression plus visible. J'ai géré seul l'ensemble du projet, de la définition des besoins et de la conception de la base de données jusqu'à l'implémentation et la mise en ligne. L'application est développée avec React Native pour iOS et Android. La version iOS est déjà publiée et la version Android approche de sa sortie.",
     },
   },
   tripCalculator: {
@@ -168,7 +168,7 @@ export const projectCatalog = {
       platform: "Application Web",
       title: "Trip Calculator",
       description:
-        "Trip Calculator recupere des taux de change recents via une API externe afin de permettre aux voyageurs de gerer leurs depenses a l etranger dans leur devise d origine. J ai pris en charge seul tout le projet, de la definition des besoins et de la conception de la base de donnees jusqu a l implementation et la mise en ligne. Cote backend, j ai utilise JWT, bcrypt, zxcvbn et zod pour securiser la gestion des donnees. Cote frontend, j ai vise un design simple, accessible et une experience utilisateur intuitive.",
+        "Trip Calculator récupère des taux de change récents via une API externe afin de permettre aux voyageurs de gérer leurs dépenses à l'étranger dans leur devise d'origine. J'ai pris en charge seul tout le projet, de la définition des besoins et de la conception de la base de données jusqu'à l'implémentation et la mise en ligne. Côté backend, j'ai utilisé JWT, bcrypt, zxcvbn et zod pour sécuriser la gestion des données. Côté frontend, j'ai visé un design simple, accessible et une expérience utilisateur intuitive.",
     },
   },
   portfolio: {
@@ -195,7 +195,7 @@ export const projectCatalog = {
       platform: "Site Web",
       title: "Portfolio",
       description:
-        "Il s agit du site web que vous consultez en ce moment. C est mon portfolio, avec une presentation de mon parcours. J ai cherche a creer un design simple, moderne et facile a consulter. Le mode nuit est active par defaut, mais les visiteurs peuvent passer au mode clair selon leurs preferences. Le site prend egalement en charge plusieurs langues, dont l anglais, le japonais et le francais, grace a i18n. Merci d avoir visite mon portfolio et d avoir pris le temps de le parcourir !",
+        "Il s'agit du site web que vous consultez en ce moment. C'est mon portfolio, avec une présentation de mon parcours. J'ai cherché à créer un design simple, moderne et facile à consulter. Le mode nuit est activé par défaut, mais les visiteurs peuvent passer au mode clair selon leurs préférences. Le site prend également en charge plusieurs langues, dont l'anglais, le japonais et le français, grâce à i18n. Merci d'avoir visité mon portfolio et d'avoir pris le temps de le parcourir !",
     },
   },
   tsunagaruLink: {

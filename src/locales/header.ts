@@ -5,7 +5,7 @@ export const headerLocales: Locale[] = ["en", "ja", "fr"];
 export const headerCopy = {
   nav: {
     landing: { en: "Top", ja: "トップ", fr: "Accueil" },
-    skills: { en: "Skill", ja: "スキル", fr: "Competences" },
+    skills: { en: "Skill", ja: "スキル", fr: "Compétences" },
     about: { en: "About Me", ja: "自己紹介", fr: "Moi" },
     projects: { en: "Project", ja: "プロジェクト", fr: "Projets" },
   },
@@ -33,7 +33,7 @@ export const headerCopy = {
     toggleTheme: {
       en: "Toggle theme",
       ja: "テーマを切り替える",
-      fr: "Changer le theme",
+      fr: "Changer le thème",
     },
   },
   languageOptions: {
