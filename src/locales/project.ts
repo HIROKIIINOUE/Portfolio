@@ -2,8 +2,6 @@ import type { SkillLabel } from "../components/SkillBadge/skillCatalog";
 import idealGapImage from "../assets/projects/ideal-gap.png";
 import tripCalculatorImage from "../assets/projects/trip-calculator.png";
 import portfolioImage from "../assets/projects/portfolio.png";
-import tsunagaruImage from "../assets/projects/tsunagaru.png";
-import quotationImage from "../assets/projects/quotation.png";
 import type { Locale } from "./index";
 
 // ここで各プロジェクトのスキルセットを管理
@@ -53,11 +51,15 @@ const quotationSkills: SkillLabel[] = [
   "Prisma",
 ];
 
-const campusLoopSkills: SkillLabel[] = [
-  "Next.js",
+const cicccGroupProjectSkills: SkillLabel[] = [
   "TypeScript",
-  "Prisma",
+  "React Native",
+  "Expo",
+  "Node.js",
   "PostgreSQL",
+  "Supabase",
+  "GitHub Actions",
+  "i18n",
 ];
 
 export const projectSectionCopy = {
@@ -195,40 +197,40 @@ export const projectCatalog = {
       platform: "Site Web",
       title: "Portfolio",
       description:
-        "Il s'agit du site web que vous consultez en ce moment. C'est mon portfolio, avec une présentation de mon parcours. J'ai cherché à créer un design simple, moderne et facile à consulter. Le mode nuit est activé par défaut, mais les visiteurs peuvent passer au mode clair selon leurs préférences. Le site prend également en charge plusieurs langues, dont l'anglais, le japonais et le français, grâce à i18n. Merci d'avoir visité mon portfolio et d'avoir pris le temps de le parcourir !",
+        "Voici le site web que vous consultez actuellement. Il s’agit de mon portfolio, dans lequel je présente mon parcours et mon expérience.J’ai cherché à créer un design simple, moderne et facile à lire. Le mode sombre est activé par défaut, mais les visiteurs peuvent passer au mode clair selon leurs préférences.Le site est également disponible en plusieurs langues, notamment en anglais, en japonais et en français, grâce à l’implémentation d’i18n.Merci de visiter mon portfolio et de prendre le temps de le parcourir !",
     },
   },
   tsunagaruLink: {
     common: {
       category: "team",
-      image: tsunagaruImage,
+      image: "",
       liveUrl: "",
       gitHubUrl: "",
       skills: [...tsunagaruSkills],
     },
     en: {
       platform: "Web App",
-      title: "Tsunagaru Link Project",
+      title: "Sales Link Project",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "I joined the development of a sales application that connects with Slack and LinkedIn. My main contributions included UI refinements, Sentry integration, spam prevention using a honeypot, and some refactoring. This was my first full-scale group project, where I experienced practical workflows and the overall flow of team development. For security reasons, the project name shown above is a placeholder, and I have also chosen not to include a project image for the same reason.",
     },
     ja: {
       platform: "Webアプリ",
-      title: "Tsunagaru Link Project",
+      title: "Sales Link Project",
       description:
-        "Slack、LinkedInと接続可能な営業アプリケーションの開発に参加しました。主にUI修正、Sentry導入、Honey Potを導入したスパムメッセージ防止、一部リファクタリングなどを担当しました。初となる本格的なグループプロジェクトに参入し、リアルなワークフローに触れ、実際のプロジェクトの難しさを経験しました。",
+        "Slack、LinkedInと接続可能な営業アプリケーションの開発に参加しました。主にUI修正、Sentry導入、Honey Potを導入したスパムメッセージ防止、一部リファクタリングなどを担当しました。自身初となる本格的なグループプロジェクトに参入し、実践的なワークフロー、チーム開発の流れを経験しました。セキュリティの関係上、上記プロジェクト名は仮の名前になります。また、プロジェクト画像の添付も同理由により控えております。",
     },
     fr: {
       platform: "Application Web",
-      title: "Tsunagaru Link Project",
+      title: "Sales Link Project",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "J'ai participé au développement d'une application commerciale connectée à Slack et LinkedIn. J'ai principalement pris en charge des ajustements d'interface, l'intégration de Sentry, la prévention des messages indésirables à l'aide d'un honeypot, ainsi qu'une partie du refactoring. Il s'agissait de mon premier véritable projet de groupe, au cours duquel j'ai découvert des workflows concrets et le déroulement du développement en équipe. Pour des raisons de sécurité, le nom du projet affiché ci-dessus est provisoire, et je n'ai pas non plus joint d'image du projet pour la même raison.",
     },
   },
   quotation: {
     common: {
       category: "team",
-      image: quotationImage,
+      image: "",
       liveUrl: "",
       gitHubUrl: "",
       skills: [...quotationSkills],
@@ -237,46 +239,46 @@ export const projectCatalog = {
       platform: "Web Site",
       title: "Quotation Site",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "I supported a friend who is an engineer on a quotation page project for a certain company. I mainly handled the UI design and application logic, and I was also involved in the database design. To achieve a simple and user-friendly interface, I used MUI to build a clean and consistent design system. For security reasons, the project name shown above is a placeholder, and I have also chosen not to include a project image for the same reason.",
     },
     ja: {
       platform: "Webサイト",
-      title: "某企業の見積もり作成サイト",
+      title: "見積り作成サイト",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "エンジニアの友人の「某企業様の見積もり作成ページ設立プロジェクト」の支援をしました。主にUIデザイン・ロジックを対応し、データベースデザイン設計にも携わりました。デザインではシンプルでユーザフレンドリーなUIを達成するため、MUIを活用しシンプルかつ統一されたデザインを構築しました。セキュリティの関係上、上記プロジェクト名は仮の名前になります。また、プロジェクト画像の添付も同理由により控えております。",
     },
     fr: {
       platform: "Site Web",
-      title: "LATER",
+      title: "Site de devis",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "J'ai apporté mon soutien à un ami ingénieur sur un projet de page de création de devis pour une certaine entreprise. J'ai principalement pris en charge le design de l'interface et la logique de l'application, tout en participant également à la conception de la base de données. Afin d'obtenir une interface simple et conviviale, j'ai utilisé MUI pour construire un design sobre et cohérent. Pour des raisons de sécurité, le nom du projet affiché ci-dessus est provisoire, et je n'ai pas non plus joint d'image du projet pour la même raison.",
     },
   },
   finalPJCICCC: {
     common: {
       category: "team",
       image: "",
-      liveUrl: "https://example.com/campusloop",
-      gitHubUrl: "https://github.com/example/campusloop",
-      skills: [...campusLoopSkills],
+      liveUrl: "",
+      gitHubUrl: "",
+      skills: [...cicccGroupProjectSkills],
     },
     en: {
       platform: "finalPJCICCC",
       title: "finalPJCICCC",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "This is the final group project for the college I am currently attending. The project is still in progress, and we are building a mobile application. We plan to develop a cross-platform app with React Native and Expo for both iOS and Android that supports the entire travel experience with friends, from planning to the end of the trip. I will add more details here as the project progresses.",
     },
     ja: {
       platform: "finalPJCICCC",
       title: "finalPJCICCC",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "現在私が通っているカレッジの最終グループプロジェクトになります。現在進行中でモバイルアプリを作成しています。React NativeとExpoを採用したクロスプラットフォームでiOS、Androidに対応した「友人との旅行の計画から終了までをサポートするアプリ」を開発予定です。プロジェクトが進み次第ここに詳細を記載します。",
     },
     fr: {
       platform: "finalPJCICCC",
       title: "finalPJCICCC",
       description:
-        "(Translate later)Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor nobis nulla quam harum itaque quibusdam, unde eius, quis, impedit dolore. Veniam aperiam sapiente asperiores dignissimos fugit beatae dolorum explicabo!",
+        "Il s'agit du projet de groupe final du collège que je fréquente actuellement. Le projet est encore en cours, et nous développons une application mobile. Nous prévoyons de créer, avec React Native et Expo, une application cross-platform compatible iOS et Android qui accompagnera les voyages entre amis, de la planification jusqu'à la fin du séjour. J'ajouterai plus de détails ici à mesure que le projet avancera.",
     },
   },
 } as const;
