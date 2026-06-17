@@ -19,6 +19,8 @@ const screenshotTheme =
 const ProjectCard = ({ project, index }: Props) => {
   const { t } = useTranslation('project')
   const hasImage = project.common.image.length > 0
+  const hasLiveUrl = project.common.liveUrl.length > 0
+  const hasGitHubUrl = project.common.gitHubUrl.length > 0
   const { ref, isVisible } = useRevealOnScroll<HTMLElement>({
     threshold: 0.08,
     rootMargin: '0px 0px -12% 0px',
@@ -81,24 +83,44 @@ const ProjectCard = ({ project, index }: Props) => {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={project.common.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="theme-primary-button inline-flex items-center justify-center gap-2 rounded-full border border-emerald-400/18 bg-[linear-gradient(135deg,rgba(6,95,70,0.88)_0%,rgba(5,150,105,0.84)_55%,rgba(4,120,87,0.9)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50 shadow-[0_14px_34px_rgba(4,120,87,0.18)] ring-1 ring-emerald-300/8 transition hover:-translate-y-0.5 hover:border-emerald-300/28 hover:brightness-110"
-          >
-            <FaArrowUpRightFromSquare className="text-xs" />
-            {t('section.actions.live')}
-          </a>
-          <a
-            href={project.common.gitHubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
-          >
-            <FaGithub className="text-sm" />
-            {t('section.actions.github')}
-          </a>
+          {hasLiveUrl ? (
+            <a
+              href={project.common.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="theme-primary-button inline-flex items-center justify-center gap-2 rounded-full border border-emerald-400/18 bg-[linear-gradient(135deg,rgba(6,95,70,0.88)_0%,rgba(5,150,105,0.84)_55%,rgba(4,120,87,0.9)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50 shadow-[0_14px_34px_rgba(4,120,87,0.18)] ring-1 ring-emerald-300/8 transition hover:-translate-y-0.5 hover:border-emerald-300/28 hover:brightness-110"
+            >
+              <FaArrowUpRightFromSquare className="text-xs" />
+              {t('section.actions.live')}
+            </a>
+          ) : (
+            <span
+              aria-disabled="true"
+              className="theme-primary-button inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-full border border-emerald-500/10 bg-emerald-950/30 px-4 py-2.5 text-sm font-semibold text-emerald-100/45 opacity-60 shadow-[0_14px_34px_rgba(4,120,87,0.08)]"
+            >
+              <FaArrowUpRightFromSquare className="text-xs" />
+              {t('section.actions.live')}
+            </span>
+          )}
+          {hasGitHubUrl ? (
+            <a
+              href={project.common.gitHubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
+            >
+              <FaGithub className="text-sm" />
+              {t('section.actions.github')}
+            </a>
+          ) : (
+            <span
+              aria-disabled="true"
+              className="theme-secondary-button inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-full border border-white/8 bg-white/[0.02] px-4 py-2.5 text-sm font-semibold text-slate-100/45 opacity-60"
+            >
+              <FaGithub className="text-sm" />
+              {t('section.actions.github')}
+            </span>
+          )}
         </div>
       </div>
     </article>
