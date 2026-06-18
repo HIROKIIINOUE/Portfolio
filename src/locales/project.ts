@@ -177,7 +177,7 @@ export const projectCatalog = {
     common: {
       category: "personal",
       image: portfolioImage,
-      liveUrl: "portfolio-five-pied-61.vercel.app/",
+      liveUrl: "https://portfolio-five-pied-61.vercel.app/",
       gitHubUrl: "https://github.com/HIROKIIINOUE/Portfolio",
       skills: [...portfolioSkills],
     },
