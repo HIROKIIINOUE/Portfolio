@@ -93,6 +93,16 @@ export const projectSectionCopy = {
       ja: "リンク",
       fr: "Link",
     },
+    appStore: {
+      en: "App Store",
+      ja: "App Store",
+      fr: "App Store",
+    },
+    googlePlay: {
+      en: "Google Play",
+      ja: "Google Play",
+      fr: "Google Play",
+    },
     github: {
       en: "GitHub",
       ja: "GitHub",
@@ -124,6 +134,16 @@ export const projectCatalog = {
       category: "personal",
       image: idealGapImage,
       liveUrl: "https://apps.apple.com/app/id6759301711",
+      liveLinks: [
+        {
+          labelKey: "appStore",
+          url: "https://apps.apple.com/app/id6759301711",
+        },
+        {
+          labelKey: "googlePlay",
+          url: "https://play.google.com/store/apps/details?id=com.idealgap.app",
+        },
+      ],
       gitHubUrl: "https://github.com/HIROKIIINOUE/Ideal_Gap",
       skills: [...idealGapSkills],
     },
@@ -131,19 +151,19 @@ export const projectCatalog = {
       platform: "Mobile App",
       title: "Ideal Gap",
       description:
-        "Ideal Gap helps users build habits that move them closer to their ideal selves by making consistent effort visible and maximizing their concentration. I handled the full process alone, from requirements definition and database design to implementation and release. The app is built with React Native as a cross-platform product for both iOS and Android. The iOS version is already released, and the Android version is close to launch.",
+        "Ideal Gap helps users build habits that move them closer to their ideal selves by making consistent effort visible and maximizing their concentration. I handled the full process alone, from requirements definition and database design to implementation and release. The app is built with React Native as a cross-platform product for both iOS and Android, and now it's available in App Store and Google Play.",
     },
     ja: {
       platform: "モバイルアプリ",
       title: "Ideal Gap",
       description:
-        "本アプリはユーザが理想の自分に近づくために努力を習慣化させることを助け、タスクへの集中力上昇と努力の見える化を実現するアプリです。要件定義やデータベース設計、実装からリリースまで一人で行いました。本プロジェクトはReact Nativeを採用、iOS/Android両方で使用できるクロスプラットフォーム開発になります。iOS版は既にリリース済み、Android版はリリース間近です。",
+        "本アプリはユーザが理想の自分に近づくために努力を習慣化させることを助け、タスクへの集中力上昇と努力の見える化を実現するアプリです。要件定義やデータベース設計、実装からリリースまで一人で行いました。本プロジェクトはReact Nativeを採用、iOS/Android両方で使用できるクロスプラットフォーム開発になります。App Store / Google Playにてダウンロード可能です。",
     },
     fr: {
       platform: "Application Mobile",
       title: "Ideal Gap",
       description:
-        "Ideal Gap aide les utilisateurs à transformer leurs efforts en habitudes pour se rapprocher de la personne qu'ils veulent devenir, tout en rendant leur progression plus visible. J'ai géré seul l'ensemble du projet, de la définition des besoins et de la conception de la base de données jusqu'à l'implémentation et la mise en ligne. L'application est développée avec React Native pour iOS et Android. La version iOS est déjà publiée et la version Android approche de sa sortie.",
+        "Ideal Gap aide les utilisateurs à transformer leurs efforts en habitudes pour se rapprocher de la personne qu'ils veulent devenir, tout en rendant leur progression plus visible. J'ai géré seul l'ensemble du projet, de la définition des besoins et de la conception de la base de données jusqu'à l'implémentation et la mise en ligne. L'application est développée avec React Native pour iOS et Android. L'application est disponible sur l'App Store et Google Play.",
     },
   },
   tripCalculator: {
@@ -282,6 +302,13 @@ export const projectCatalog = {
     },
   },
 } as const;
+
+export type ProjectStoreLinkLabel = "appStore" | "googlePlay";
+
+export type ProjectStoreLink = {
+  labelKey: ProjectStoreLinkLabel;
+  url: string;
+};
 
 type ProjectCatalog = typeof projectCatalog;
 type ProjectEntry = ProjectCatalog[keyof ProjectCatalog];

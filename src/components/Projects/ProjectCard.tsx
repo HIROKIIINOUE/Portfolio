@@ -1,17 +1,31 @@
-// 次回ココから
-// プロジェクトカードの編集と完成
-// 技術スタックはアイコンを共通コンポーネント化してスキルセクションと共用できないか
-
-import { FaArrowUpRightFromSquare, FaGithub } from 'react-icons/fa6'
+import {
+  FaApple,
+  FaArrowUpRightFromSquare,
+  FaGithub,
+  FaGooglePlay,
+} from 'react-icons/fa6'
 import { useTranslation } from 'react-i18next'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 import SkillBadge from '../SkillBadge/SkillBadge'
-import type { Project } from '../../locales/project'
+import type { Project, ProjectStoreLink } from '../../locales/project'
 
 type Props = {
   project: Project
   index: number
 }
+
+const storeBadgeMeta = {
+  appStore: {
+    icon: FaApple,
+    eyebrow: 'Download on the',
+    title: 'App Store',
+  },
+  googlePlay: {
+    icon: FaGooglePlay,
+    eyebrow: 'GET IT ON',
+    title: 'Google Play',
+  },
+} as const
 
 const screenshotTheme =
   'bg-[radial-gradient(circle_at_top_left,rgba(110,231,183,0.26),transparent_36%),linear-gradient(145deg,rgba(6,78,59,0.92)_0%,rgba(15,23,42,0.98)_72%,rgba(2,6,23,0.98)_100%)]'
@@ -21,6 +35,11 @@ const ProjectCard = ({ project, index }: Props) => {
   const hasImage = project.common.image.length > 0
   const hasLiveUrl = project.common.liveUrl.length > 0
   const hasGitHubUrl = project.common.gitHubUrl.length > 0
+  const liveLinks =
+    ('liveLinks' in project.common
+      ? project.common.liveLinks.filter((link: ProjectStoreLink) => link.url.length > 0)
+      : []) as ProjectStoreLink[]
+  const hasLiveLinks = liveLinks.length > 0
   const { ref, isVisible } = useRevealOnScroll<HTMLElement>({
     threshold: 0.08,
     rootMargin: '0px 0px -12% 0px',
@@ -83,7 +102,37 @@ const ProjectCard = ({ project, index }: Props) => {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          {hasLiveUrl ? (
+          {hasLiveLinks ? (
+            liveLinks.map((link) => (
+              <a
+                key={link.labelKey}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={t(`section.actions.${link.labelKey}`)}
+                className="inline-flex min-w-[180px] items-center gap-3 rounded-[1rem] border border-white/35 bg-black px-4 py-2.5 text-white shadow-[0_14px_28px_rgba(0,0,0,0.3)] transition hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_16px_34px_rgba(0,0,0,0.38)]"
+              >
+                {(() => {
+                  const meta = storeBadgeMeta[link.labelKey]
+                  const Icon = meta.icon
+
+                  return (
+                    <>
+                      <Icon className="shrink-0 text-[2rem]" />
+                      <span className="flex flex-col leading-none">
+                        <span className="text-[0.58rem] font-medium tracking-[0.08em] text-white/88">
+                          {meta.eyebrow}
+                        </span>
+                        <span className="mt-0.5 text-[1.05rem] font-semibold tracking-[-0.03em] text-white">
+                          {meta.title}
+                        </span>
+                      </span>
+                    </>
+                  )
+                })()}
+              </a>
+            ))
+          ) : hasLiveUrl ? (
             <a
               href={project.common.liveUrl}
               target="_blank"
@@ -107,7 +156,7 @@ const ProjectCard = ({ project, index }: Props) => {
               href={project.common.gitHubUrl}
               target="_blank"
               rel="noreferrer"
-              className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07]"
+              className="theme-secondary-button inline-flex items-center justify-center gap-2 rounded-full border border-emerald-300/70 bg-[linear-gradient(135deg,rgba(5,150,105,0.34)_0%,rgba(16,185,129,0.18)_48%,rgba(255,255,255,0.08)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50 shadow-[0_0_0_1px_rgba(110,231,183,0.2),0_14px_34px_rgba(5,150,105,0.18)] transition hover:-translate-y-0.5 hover:border-emerald-200/90 hover:bg-[linear-gradient(135deg,rgba(5,150,105,0.46)_0%,rgba(16,185,129,0.24)_48%,rgba(255,255,255,0.1)_100%)] hover:shadow-[0_0_0_1px_rgba(167,243,208,0.26),0_18px_38px_rgba(5,150,105,0.24)]"
             >
               <FaGithub className="text-sm" />
               {t('section.actions.github')}
@@ -115,7 +164,7 @@ const ProjectCard = ({ project, index }: Props) => {
           ) : (
             <span
               aria-disabled="true"
-              className="theme-secondary-button inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-full border border-white/8 bg-white/[0.02] px-4 py-2.5 text-sm font-semibold text-slate-100/45 opacity-60"
+              className="theme-secondary-button inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-full border border-emerald-300/38 bg-[linear-gradient(135deg,rgba(5,150,105,0.16)_0%,rgba(16,185,129,0.08)_48%,rgba(255,255,255,0.03)_100%)] px-4 py-2.5 text-sm font-semibold text-emerald-50/55 opacity-60 shadow-[0_0_0_1px_rgba(110,231,183,0.08)]"
             >
               <FaGithub className="text-sm" />
               {t('section.actions.github')}
